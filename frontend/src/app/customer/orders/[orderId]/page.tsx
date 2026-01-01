@@ -349,7 +349,17 @@ export default function OrderDetailsPage() {
                 <div className="mt-4 pt-4 border-t border-green-200">
                   <div className="flex flex-col sm:flex-row items-center gap-4">
                     <QRCodeDisplay 
-                      data={`${typeof window !== 'undefined' ? window.location.origin : ''}/api/barcode/scan/${order.orderNumber}`}
+                      data={JSON.stringify({
+                        orderNumber: order.orderNumber,
+                        status: order.status,
+                        customer: order.customer?.name || 'N/A',
+                        phone: order.customer?.phone || 'N/A',
+                        pickupDate: order.pickupDate,
+                        estimatedDelivery: order.estimatedDeliveryDate,
+                        totalAmount: order.pricing?.total || 0,
+                        paymentStatus: order.paymentStatus,
+                        items: order.items?.length || 0
+                      })}
                       orderNumber={order.orderNumber}
                       size={120}
                       showPrint={false}
@@ -670,7 +680,17 @@ export default function OrderDetailsPage() {
               <h3 className="text-lg font-semibold text-gray-800 mb-4 text-center">Order QR Code</h3>
               <div className="flex justify-center">
                 <QRCodeDisplay 
-                  data={`${typeof window !== 'undefined' ? window.location.origin : ''}/api/barcode/scan/${order.orderNumber}`}
+                  data={JSON.stringify({
+                    orderNumber: order.orderNumber,
+                    status: order.status,
+                    customer: order.customer?.name || 'N/A',
+                    phone: order.customer?.phone || 'N/A',
+                    pickupDate: order.pickupDate,
+                    estimatedDelivery: order.estimatedDeliveryDate,
+                    totalAmount: order.pricing?.total || 0,
+                    paymentStatus: order.paymentStatus,
+                    items: order.items?.length || 0
+                  })}
                   orderNumber={order.orderNumber}
                   size={160}
                 />

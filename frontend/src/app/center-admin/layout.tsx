@@ -93,7 +93,7 @@ export default function CenterAdminLayout({
           mobileOpen={mobileMenuOpen}
           onMobileClose={() => setMobileMenuOpen(false)}
         />
-        <main className={`flex-1 p-4 lg:p-6 overflow-x-auto transition-all duration-300 ${
+        <main className={`flex-1 p-4 lg:p-6 pt-8 overflow-x-auto transition-all duration-300 ${
           sidebarCollapsed ? 'lg:ml-16' : 'lg:ml-64'
         }`}>
           <div className="max-w-full">

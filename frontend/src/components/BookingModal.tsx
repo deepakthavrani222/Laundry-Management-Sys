@@ -438,7 +438,15 @@ export default function BookingModal({ isOpen, onClose, onLoginRequired }: Booki
   // Success Screen
   if (orderSuccess) {
     const orderNumber = createdOrder?.orderNumber || createdOrder?._id || ''
-    const qrData = `${typeof window !== 'undefined' ? window.location.origin : ''}/customer/orders/${createdOrder?._id}`
+    const qrData = JSON.stringify({
+      orderNumber: orderNumber,
+      status: createdOrder?.status || 'placed',
+      customer: user?.name || 'N/A',
+      phone: user?.phone || 'N/A',
+      pickupDate: createdOrder?.pickupDate || selectedDate,
+      totalAmount: createdOrder?.pricing?.total || 0,
+      paymentStatus: createdOrder?.paymentStatus || 'pending'
+    })
     
     return (
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">

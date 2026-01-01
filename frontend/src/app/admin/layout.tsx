@@ -30,7 +30,7 @@ function AdminLayoutContent({ children }: { children: React.ReactNode }) {
         <AdminHeader onMenuClick={() => setMobileOpen(true)} />
 
         {/* Page Content - Add padding for fixed header */}
-        <main className="p-4 lg:p-6 pt-20">
+        <main className="p-4 lg:p-6 pt-24">
           <div className="max-w-full">{children}</div>
         </main>
       </div>

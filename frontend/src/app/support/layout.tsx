@@ -26,8 +26,8 @@ function SupportLayoutContent({ children }: { children: React.ReactNode }) {
         {/* Header */}
         <SupportHeader onMenuClick={() => setMobileMenuOpen(true)} />
 
-        {/* Page Content */}
-        <main className="p-4 lg:p-6">{children}</main>
+        {/* Page Content - Add padding for sticky header */}
+        <main className="p-4 lg:p-6 pt-20">{children}</main>
       </div>
     </div>
   )
