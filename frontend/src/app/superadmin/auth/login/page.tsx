@@ -215,7 +215,7 @@ export default function SuperAdminLogin() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-between">
+              <div className="flex items-center">
                 <label className="flex items-center space-x-2 cursor-pointer">
                   <input
                     type="checkbox"
@@ -225,13 +225,6 @@ export default function SuperAdminLogin() {
                   />
                   <span className="text-sm text-gray-300">Remember me</span>
                 </label>
-                
-                <Link 
-                  href="/superadmin/auth/forgot-password"
-                  className="text-sm text-purple-400 hover:text-purple-300 transition-colors"
-                >
-                  Forgot password?
-                </Link>
               </div>
 
               <Button
